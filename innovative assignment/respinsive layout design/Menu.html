@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		nav {
+			width: 100%;
+			background: lime;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+		}
+
+		nav>.logo>h1 {
+			font-size: 40px;
+			font-family: cursive;
+		}
+
+		nav>.menu>ul {
+			display: flex;
+			list-style: none;
+		}
+
+		nav>.menu>ul>li {
+			padding: 20px;
+			position: relative;
+		}
+
+		nav>.menu>ul>li:hover {
+			background: black;
+
+		}
+
+		nav>.menu>ul>li:hover>a {
+			color: white;
+		}
+
+		nav>.menu>ul>li>a {
+			text-decoration: none;
+			color: black;
+			font-size: 20px;
+		}
+
+		nav>.menu>ul>li>.submenu {
+			list-style: none;
+			position: absolute;
+			background: aqua;
+			width: 200px;
+			padding: 20px 0;
+			top: 62px;
+			display: none;
+			left: 0;
+		}
+
+		nav>.menu>ul>li>.submenu>li {
+			padding: 0 20px;
+		}
+
+		nav>.menu>ul>li:hover>.submenu {
+			display: block;
+			line-height: 30px;
+		}
+
+		nav>.menu>ul>li>.submenu>li>a {
+			text-decoration: none;
+			font-size: 19px;
+			color: black;
+		}
+
+		#check {
+			/*display: none;*/
+		}
+
+		nav>label {
+			font-size: 20px;
+			cursor: pointer;
+			display: none;
+		}
+
+		@media only screen and (max-width: 720px) {
+			nav {
+				/*background: red;*/
+			}
+
+			nav>.menu {
+				position: absolute;
+				left: -250px;
+				top: 0;
+				width: 250px;
+				background: orange;
+				height: 100vh;
+
+			}
+
+			nav>.menu>ul {
+				display: block;
+			}
+
+			nav>.menu>ul>li>.submenu {
+				position: static;
+			}
+
+			nav>label {
+				display: block;
+			}
+
+			#check:checked~.menu {
+				left: 0;
+				transition: left .5s linear;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<nav>
+		<div class="logo">
+			<h1>FlipKart</h1>
+		</div>
+		<input type="checkbox" id="check">
+		<label for="check"><i class="fa fa-bars"></i></label>
+		<div class="menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Service</a>
+					<ul class="submenu">
+						<li><a href="#">Service - 1</a></li>
+						<li><a href="#">Service - 2</a></li>
+						<li><a href="#">Service - 3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</div>
+	</nav>
+
+</body>
+
+</html>
